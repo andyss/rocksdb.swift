@@ -12,7 +12,7 @@ the upstream rocksdb library. Patch version varies.
   s.homepage         = 'https://github.com/andyss/rocksdb.swift'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Koray Koska' => 'koray@koska.at' }
-  s.source           = { :git => 'https://github.com/andyss/rocksdb.swift.git', :tag => "main", :submodules => true }
+  s.source           = { :git => 'https://github.com/andyss/rocksdb.swift.git', :tag => "master", :submodules => true }
 
   s.ios.deployment_target = '8.0'
   s.osx.deployment_target = '10.10'
