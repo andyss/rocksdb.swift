@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'librocksdb'
-  s.version          = '6.4.15'
+  s.version          = '6.29.0'
   s.summary          = 'rocksdb bindings for Swift. Cocoapods and SPM support. Linux support.'
 
   s.description      = <<-DESC
@@ -9,10 +9,10 @@ Works on iOS, macOS, tvOS, watchOS and Linux. Major and Minor Version numbers ar
 the upstream rocksdb library. Patch version varies.
                        DESC
 
-  s.homepage         = 'https://github.com/Ybrin/rocksdb.swift'
+  s.homepage         = 'https://github.com/andyss/rocksdb.swift'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Koray Koska' => 'koray@koska.at' }
-  s.source           = { :git => 'https://github.com/Ybrin/rocksdb.swift.git', :tag => "v#{s.version.to_s}", :submodules => true }
+  s.source           = { :git => 'https://github.com/andyss/rocksdb.swift.git', :tag => "main", :submodules => true }
 
   s.ios.deployment_target = '8.0'
   s.osx.deployment_target = '10.10'
@@ -24,7 +24,7 @@ the upstream rocksdb library. Patch version varies.
   s.module_name = 'librocksdb'
 
   s.pod_target_xcconfig = {
-    'GCC_PREPROCESSOR_DEFINITIONS' => 'ROCKSDB_PLATFORM_POSIX=1 ROCKSDB_LIB_IO_POSIX=1 PORTABLE=1 OS_MACOSX=1 ROCKSDB_BUILD_GIT_SHA_ENV=\"e3169e3ea8762d2f34880742106858a23c8dc8b7\" ROCKSDB_BUILD_GIT_DATE_ENV="\"Mon Oct 21 12:07:58 2019 -0700\""',
+    'GCC_PREPROCESSOR_DEFINITIONS' => 'ROCKSDB_PLATFORM_POSIX=1 ROCKSDB_LIB_IO_POSIX=1 WITH_ZLIB=1 PORTABLE=1 OS_MACOSX=1 ROCKSDB_BUILD_GIT_SHA_ENV=\"da11a59034584ea2d0911268b8136e5249d6b692\" ROCKSDB_BUILD_GIT_DATE_ENV="\"Mon Oct 21 12:07:58 2019 -0700\""',
     'HEADER_SEARCH_PATHS' => '"${PODS_ROOT}/librocksdb/Sources/librocksdb/upstream" "${PODS_ROOT}/librocksdb/Sources/librocksdb/upstream/include" "${PODS_ROOT}/librocksdb/Sources/librocksdb/upstream/util"',
     'WARNING_CFLAGS' => '-Wno-shorten-64-to-32 -Wno-comma -Wno-unreachable-code -Wno-conditional-uninitialized -Wno-deprecated-declarations',
     'USE_HEADERMAP' => 'No'
